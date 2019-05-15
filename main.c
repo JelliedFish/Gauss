@@ -13,13 +13,13 @@ void text_console() {
 }
 
 int main() {
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen("Gauss.in.txt", "r", stdin);
+    freopen("Gauss.out.txt", "w", stdout);
     int n, m;
     double** a;
     double* y;
     srand(time(NULL));//Генерируем случайные числа
-    scanf("%d %d", &m, &n);
+    scanf("%d %d", &n, &m);
     a = malloc(sizeof(double*[m]));
     y = malloc(sizeof(double[m]));
     for(int i = 0; i < m; i++){
@@ -34,6 +34,26 @@ int main() {
     }
     //cnan
     gauss(a, m, n);
-    //solve(a, y, m, n);
+    free(a);
+    free(y);
+    fclose(stdin);
+    fclose(stdout);
+    freopen("solve.in.txt", "r", stdin);
+    freopen("solve.out.txt", "w", stdout);
+    scanf("%d %d", &n, &m);
+    a = malloc(sizeof(double*[m]));
+    y = malloc(sizeof(double[m]));
+    for(int i = 0; i < n; i++){
+        a[i] = malloc(sizeof(double[m]));
+        for(int j = 0; j < m; j++) {
+            scanf("%lf", &a[i][j]);
+        }
+    }
+    for(int i = 0; i < n; i++){
+        scanf("%lf", &y[i]);
+    }
+    solve(a, y, m, n);
+    fclose(stdin);
+    fclose(stdout);
     return 0;
 }
