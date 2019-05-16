@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Gauss.c"
-#include "Solve.c"
+#include "Gauss.h"
+#include "Solve.h"
 
-//jbbj
+
 
 
 int main() {

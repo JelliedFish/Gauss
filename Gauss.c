@@ -1,5 +1,7 @@
 #include "Find_main_function.c"
+#include "Find_main_function.h"
 #include "Transport.c"
+#include "Transport.h"
 #include "Gauss.h"
 #include <math.h>
 #include <stdio.h>
