@@ -4,6 +4,8 @@
 #include "Gauss.c"
 #include "Solve.c"
 
+//jbbj
+
 
 int main() {
     freopen("Gauss.in.txt", "r", stdin);
