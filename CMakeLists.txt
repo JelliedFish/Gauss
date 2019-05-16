@@ -3,4 +3,4 @@ project(Gauss C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Gauss main.c Functions.h Functions.c)
+add_executable(Gauss main.c Solve.h Solve.c Gauss.c)

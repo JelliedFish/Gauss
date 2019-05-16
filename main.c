@@ -1,16 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Functions.h"
+#include "Gauss.c"
+#include "Solve.c"
 
-void text_console() {
-
-    printf("Введите размер матрицы как MxN в файл\n");
-
-    printf("После введите саму матрицу через пробелы\n");
-
-    printf("В конце введите столбец свободных членов B\n");
-}
 
 int main() {
     freopen("Gauss.in.txt", "r", stdin);
@@ -19,20 +12,19 @@ int main() {
     double** a;
     double* y;
     srand(time(NULL));//Генерируем случайные числа
-    scanf("%d %d", &n, &m);
+    scanf("%d %d", &m, &n);
     a = malloc(sizeof(double*[m]));
     y = malloc(sizeof(double[m]));
     for(int i = 0; i < m; i++){
-        a[i] = malloc(sizeof(double[m]));
+        a[i] = malloc(sizeof(double[n]));
         for(int j = 0; j < n; j++) {
             a[i][j] = 1.0 + 4.0*rand()/(float)RAND_MAX; //Добавляем случайные числа
-           // scanf("%lf", &a[i][j]);
+           // scanf("%lf", &a[i][j]); //раскомментить, если хочется ввести матрицу вручную.
         }
     }
     for(int i = 0; i < m; i++){
         scanf("%lf", &y[i]);
     }
-    //cnan
     gauss(a, m, n);
     free(a);
     free(y);
@@ -40,11 +32,12 @@ int main() {
     fclose(stdout);
     freopen("solve.in.txt", "r", stdin);
     freopen("solve.out.txt", "w", stdout);
-    scanf("%d %d", &n, &m);
+    scanf("%d %d", &m, &n);
     a = malloc(sizeof(double*[m]));
     y = malloc(sizeof(double[m]));
+
     for(int i = 0; i < n; i++){
-        a[i] = malloc(sizeof(double[m]));
+        a[i] = malloc(sizeof(double[n]));
         for(int j = 0; j < m; j++) {
             scanf("%lf", &a[i][j]);
         }

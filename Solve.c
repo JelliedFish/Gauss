@@ -1,10 +1,11 @@
 
-#include "Functions.h"
+#include "Gauss.c"
+#include "Solve.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-int find_main(int k, int m, double** a) {
+/*int find_main(int k, int m, double** a) {
     double max = 0;
     int index = 0;
     const double eps = 0.00001;
@@ -25,9 +26,9 @@ int find_main(int k, int m, double** a) {
     else {
         return index;
     }
-}
+}*/
 
-void transport (int k, int n, int index_of_max, double** a) {
+/*void transport (int k, int n, int index_of_max, double** a) {
 
     //меняем местами строку с макисимальным и верхнюю местами
     for (int j = 0; j < n; j++)
@@ -36,9 +37,9 @@ void transport (int k, int n, int index_of_max, double** a) {
         a[k][j] = a[index_of_max][j];
         a[index_of_max][j] = temp;
     }
-}
+}*/
 
-void gauss(double** a,  int m,  int n) {
+/*void gauss(double** a,  int m,  int n) {
     int index_of_max = 0;
     int k = 0;
     const double eps = 0.000001;
@@ -92,7 +93,7 @@ void gauss(double** a,  int m,  int n) {
         printf("\n");
     }
 
-}
+}*/
 
 int solve(double** a, double* y, int m, int n) {
     double *x = malloc(sizeof(double[n]));
